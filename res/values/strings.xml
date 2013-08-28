@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Cerveza Countdown</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="durationPrefix">We will be on a plane in:</string>
+    <string name="durationValue">working...</string>
+    
+</resources>
