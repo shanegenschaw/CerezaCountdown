@@ -9,21 +9,86 @@
     tools:context=".MainActivity" >
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/durationPrefix"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/durationPrefix"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <TextView
-        android:id="@+id/durationValueTextView"
+        android:id="@+id/daysValue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView2"
-        android:layout_below="@+id/textView2"
+        android:layout_alignLeft="@+id/durationPrefix"
         android:layout_marginLeft="25dp"
+        android:layout_below="@+id/durationPrefix"
         android:layout_marginTop="15dp"
-        android:text="@string/durationValue"
+        android:text="@string/timePlaceholder"
         android:textAppearance="?android:attr/textAppearanceLarge" />
+    <TextView
+        android:id="@+id/daysLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/daysValue"
+        android:layout_toRightOf="@+id/daysValue"
+        android:layout_marginLeft="4dp"
+        android:text="@string/daysLabel" />
+
+    <TextView
+        android:id="@+id/hoursValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/durationPrefix"
+        android:layout_marginLeft="25dp"
+        android:layout_below="@+id/daysValue"
+        android:layout_marginTop="5dp"
+        android:text="@string/timePlaceholder"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+    <TextView
+        android:id="@+id/hoursLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/hoursValue"
+        android:layout_toRightOf="@+id/hoursValue"
+        android:layout_marginLeft="4dp"
+        android:text="@string/hoursLabel" />
+
+    <TextView
+        android:id="@+id/minutesValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/durationPrefix"
+        android:layout_marginLeft="25dp"
+        android:layout_below="@+id/hoursValue"
+        android:layout_marginTop="5dp"
+        android:text="@string/timePlaceholder"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+    <TextView
+        android:id="@+id/minutesLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/minutesValue"
+        android:layout_toRightOf="@+id/minutesValue"
+        android:layout_marginLeft="4dp"
+        android:text="@string/minutesLabel" />
+
+    <TextView
+        android:id="@+id/secondsValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/durationPrefix"
+        android:layout_marginLeft="25dp"
+        android:layout_below="@+id/minutesValue"
+        android:layout_marginTop="5dp"
+        android:text="@string/timePlaceholder"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+    <TextView
+        android:id="@+id/secondsLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/secondsValue"
+        android:layout_toRightOf="@+id/secondsValue"
+        android:layout_marginLeft="4dp"
+        android:text="@string/secondsLabel" />
 
 </RelativeLayout>
