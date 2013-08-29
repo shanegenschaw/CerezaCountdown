@@ -8,87 +8,109 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".MainActivity" >
 
-    <TextView
-        android:id="@+id/durationPrefix"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/durationPrefix"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+    <LinearLayout
+        android:id="@+id/headerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
 
-    <TextView
-        android:id="@+id/daysValue"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/durationPrefix"
-        android:layout_marginLeft="25dp"
-        android:layout_below="@+id/durationPrefix"
-        android:layout_marginTop="15dp"
-        android:text="@string/timePlaceholder"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
-    <TextView
-        android:id="@+id/daysLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/daysValue"
-        android:layout_toRightOf="@+id/daysValue"
-        android:layout_marginLeft="4dp"
-        android:text="@string/daysLabel" />
+        <TextView
+            android:id="@+id/durationPrefix"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/durationPrefix"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+    </LinearLayout>
 
-    <TextView
-        android:id="@+id/hoursValue"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:id="@+id/timerLayout"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/durationPrefix"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/headerLayout"
         android:layout_marginLeft="25dp"
-        android:layout_below="@+id/daysValue"
-        android:layout_marginTop="5dp"
-        android:text="@string/timePlaceholder"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
-    <TextView
-        android:id="@+id/hoursLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/hoursValue"
-        android:layout_toRightOf="@+id/hoursValue"
-        android:layout_marginLeft="4dp"
-        android:text="@string/hoursLabel" />
+        android:orientation="vertical" >
 
-    <TextView
-        android:id="@+id/minutesValue"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/durationPrefix"
-        android:layout_marginLeft="25dp"
-        android:layout_below="@+id/hoursValue"
-        android:layout_marginTop="5dp"
-        android:text="@string/timePlaceholder"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
-    <TextView
-        android:id="@+id/minutesLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/minutesValue"
-        android:layout_toRightOf="@+id/minutesValue"
-        android:layout_marginLeft="4dp"
-        android:text="@string/minutesLabel" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
 
-    <TextView
-        android:id="@+id/secondsValue"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/durationPrefix"
-        android:layout_marginLeft="25dp"
-        android:layout_below="@+id/minutesValue"
-        android:layout_marginTop="5dp"
-        android:text="@string/timePlaceholder"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
-    <TextView
-        android:id="@+id/secondsLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/secondsValue"
-        android:layout_toRightOf="@+id/secondsValue"
-        android:layout_marginLeft="4dp"
-        android:text="@string/secondsLabel" />
+            <TextView
+                android:id="@+id/daysValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/timePlaceholder"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/daysValue"
+                android:layout_marginLeft="4dp"
+                android:layout_toRightOf="@+id/daysValue"
+                android:text="@string/daysLabel" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <TextView
+                android:id="@+id/hoursValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/timePlaceholder"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/hoursValue"
+                android:layout_marginLeft="4dp"
+                android:layout_toRightOf="@+id/hoursValue"
+                android:text="@string/hoursLabel" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <TextView
+                android:id="@+id/minutesValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/timePlaceholder"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/minutesValue"
+                android:layout_marginLeft="4dp"
+                android:layout_toRightOf="@+id/minutesValue"
+                android:text="@string/minutesLabel" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <TextView
+                android:id="@+id/secondsValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/timePlaceholder"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+
+            <TextView
+                android:id="@+id/secondsLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/secondsValue"
+                android:layout_marginLeft="4dp"
+                android:layout_toRightOf="@+id/secondsValue"
+                android:text="@string/secondsLabel" />
+        </RelativeLayout>
+
+    </LinearLayout>
 
 </RelativeLayout>
