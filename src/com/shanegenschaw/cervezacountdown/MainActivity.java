@@ -77,12 +77,13 @@ public class MainActivity extends Activity {
 	}
 
 	protected void startTimer() {
-		long millisUntilMexico = CountdownFactory.getDuration().getMillis();
-		timer = new CountDownTimer(millisUntilMexico, 1000) {
+		Duration duration = CountdownFactory.getDuration();
+		timer = new CountDownTimer(duration.getMillis(), 1000) {
 
 			@Override
 			public void onTick(long millisUntilFinished) {
-				refreshView(millisUntilFinished);
+				Duration d = Duration.millis(millisUntilFinished);
+				refreshView(d);
 			}
 
 			@Override
@@ -92,11 +93,10 @@ public class MainActivity extends Activity {
 
 		};
 		timer.start();
-		refreshView(millisUntilMexico);
+		refreshView(duration);
 	}
 
-	protected void refreshView(long millisUntilFinished) {
-		Duration d = Duration.millis(millisUntilFinished);
+	protected void refreshView(Duration d) {
 		Countdown cd = CountdownFactory.durationToCountdown(d);
 		daysValue.setText("" + cd.getDays());
 		hoursValue.setText("" + cd.getHours());

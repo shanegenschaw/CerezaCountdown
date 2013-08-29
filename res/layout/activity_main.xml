@@ -1,24 +1,29 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".MainActivity" >
+    tools:context=".MainActivity" xmlns:android="http://schemas.android.com/apk/res/android">
 
     <LinearLayout
         android:id="@+id/headerLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
 
         <TextView
-            android:id="@+id/durationPrefix"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/durationPrefix"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/departureDateTime"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
     </LinearLayout>
 
     <LinearLayout
@@ -47,7 +52,8 @@
                 android:layout_alignBaseline="@+id/daysValue"
                 android:layout_marginLeft="4dp"
                 android:layout_toRightOf="@+id/daysValue"
-                android:text="@string/daysLabel" />
+                android:text="@string/daysLabel"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
         </RelativeLayout>
 
         <RelativeLayout
@@ -67,7 +73,8 @@
                 android:layout_alignBaseline="@+id/hoursValue"
                 android:layout_marginLeft="4dp"
                 android:layout_toRightOf="@+id/hoursValue"
-                android:text="@string/hoursLabel" />
+                android:text="@string/hoursLabel"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
         </RelativeLayout>
 
         <RelativeLayout
@@ -87,7 +94,8 @@
                 android:layout_alignBaseline="@+id/minutesValue"
                 android:layout_marginLeft="4dp"
                 android:layout_toRightOf="@+id/minutesValue"
-                android:text="@string/minutesLabel" />
+                android:text="@string/minutesLabel"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
         </RelativeLayout>
 
         <RelativeLayout
@@ -108,9 +116,40 @@
                 android:layout_alignBaseline="@+id/secondsValue"
                 android:layout_marginLeft="4dp"
                 android:layout_toRightOf="@+id/secondsValue"
-                android:text="@string/secondsLabel" />
+                android:text="@string/secondsLabel"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
         </RelativeLayout>
+    </LinearLayout>
 
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/timerLayout"
+        android:layout_marginTop="12dp"
+        android:layout_centerHorizontal="true">
+
+        <ImageView
+            android:id="@+id/coronaImage"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/app_name"
+            android:scaleType="fitCenter"
+            android:src="@drawable/img_corona" />
+
+    </LinearLayout>
+
+    <LinearLayout
+            android:id="@+id/copyrightLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/copyright" />
     </LinearLayout>
 
 </RelativeLayout>

@@ -10,11 +10,9 @@ public class CervesaCountdownTest {
 
 	@Test
 	public void testCalculateDuration() {
-		CountdownFactory t = new CountdownFactory();
 		Duration d = CountdownFactory.getDuration();
 		Countdown cd = CountdownFactory.durationToCountdown(d);
-		System.out.println("Duration: " + cd.toText());
-		
+		System.out.println("Duration : " + " : " + cd.toText());
 	}
 
 }
