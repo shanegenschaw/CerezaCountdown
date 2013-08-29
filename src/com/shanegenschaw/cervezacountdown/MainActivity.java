@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends Activity {
 
@@ -14,7 +15,7 @@ public class MainActivity extends Activity {
 		setContentView(R.layout.activity_main);
 		refresh();
 	}
-	
+
 	@Override
 	protected void onResume() {
 		super.onResume();
@@ -23,9 +24,18 @@ public class MainActivity extends Activity {
 	
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
-		if (R.id.action_refresh == item.getItemId()) {
-			refresh();
-			return false;
+		switch (item.getItemId()) {
+		case R.id.action_refresh:
+			this.refresh();
+			return true;
+		case R.id.action_settings:
+			Toast.makeText(this, "Nothing to see here yet...", Toast.LENGTH_SHORT).show();
+			return true;
+		case R.id.action_exit:
+			this.finish();
+			return true;
+		default:
+			break;
 		}
 		return super.onOptionsItemSelected(item);
 	}
@@ -34,13 +44,13 @@ public class MainActivity extends Activity {
 		Countdown countdown = CountdownFactory.get();
 		TextView daysValue = (TextView) findViewById(R.id.daysValue);
 		daysValue.setText("" + countdown.getDays());
-		
+
 		TextView hoursValue = (TextView) findViewById(R.id.hoursValue);
 		hoursValue.setText("" + countdown.getHours());
-		
+
 		TextView minutesValue = (TextView) findViewById(R.id.minutesValue);
 		minutesValue.setText("" + countdown.getMinutes());
-		
+
 		TextView secondsValue = (TextView) findViewById(R.id.secondsValue);
 		secondsValue.setText("" + countdown.getSeconds());
 	}
