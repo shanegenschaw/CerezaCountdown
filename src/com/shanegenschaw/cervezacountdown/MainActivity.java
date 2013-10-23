@@ -8,6 +8,8 @@ import android.os.CountDownTimer;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -15,17 +17,22 @@ public class MainActivity extends Activity {
 
 	private static final String LOG_TAG = "CERVESA";
 	private CountDownTimer timer;
-	private TextView timerText;
+    private TextView headerText1;
+    private TextView headerText2;
+    private LinearLayout timerLayout;
 	private TextView daysValue;
 	private TextView hoursValue;
 	private TextView minutesValue;
 	private TextView secondsValue;
 
 	@Override
-	protected void onCreate(Bundle savedInstanceState) {
+	protected void onCreate(final Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 
+        headerText1 = (TextView) findViewById(R.id.headerText1);
+        headerText2 = (TextView) findViewById(R.id.headerText2);
+        timerLayout = (LinearLayout) findViewById(R.id.timerLayout);
 		daysValue = (TextView) findViewById(R.id.daysValue);
 		hoursValue = (TextView) findViewById(R.id.hoursValue);
 		minutesValue = (TextView) findViewById(R.id.minutesValue);
@@ -55,7 +62,7 @@ public class MainActivity extends Activity {
 	}
 
 	@Override
-	public boolean onOptionsItemSelected(MenuItem item) {
+	public boolean onOptionsItemSelected(final MenuItem item) {
 		switch (item.getItemId()) {
 		case R.id.action_settings:
 			Toast.makeText(this, "Nothing to see here yet...",
@@ -71,24 +78,23 @@ public class MainActivity extends Activity {
 	}
 
 	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
+	public boolean onCreateOptionsMenu(final Menu menu) {
 		getMenuInflater().inflate(R.menu.main, menu);
 		return true;
 	}
 
 	protected void startTimer() {
-		Duration duration = CountdownFactory.getDuration();
+		final Duration duration = CountdownFactory.getDuration();
 		timer = new CountDownTimer(duration.getMillis(), 1000) {
 
 			@Override
-			public void onTick(long millisUntilFinished) {
-				Duration d = Duration.millis(millisUntilFinished);
-				refreshView(d);
+			public void onTick(final long millisUntilFinished) {
+                refreshView(Duration.millis(millisUntilFinished));
 			}
 
 			@Override
 			public void onFinish() {
-				timerText.setText("We're off...");
+                onTimerFinish();
 			}
 
 		};
@@ -96,13 +102,21 @@ public class MainActivity extends Activity {
 		refreshView(duration);
 	}
 
-	protected void refreshView(Duration d) {
-		Countdown cd = CountdownFactory.durationToCountdown(d);
+	protected void refreshView(final Duration d) {
+		final Countdown cd = CountdownFactory.durationToCountdown(d);
 		daysValue.setText("" + cd.getDays());
 		hoursValue.setText("" + cd.getHours());
 		minutesValue.setText("" + cd.getMinutes());
 		secondsValue.setText("" + cd.getSeconds());
 	}
+
+    protected void onTimerFinish() {
+        Log.d(LOG_TAG, "onTimerFinish");
+        Toast.makeText(this, R.string.welcomeToMexico, Toast.LENGTH_SHORT).show();
+        timerLayout.setVisibility(View.GONE);
+        headerText1.setText(R.string.welcomeToMexico);
+        headerText2.setText(R.string.moreBeerPlease);
+    }
 
 	protected void cancelTimer() {
 		if (null != timer) {

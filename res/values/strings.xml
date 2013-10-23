@@ -4,8 +4,10 @@
     <string name="app_name">Cerveza Countdown</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
-    <string name="departureDateTime">Thu October 24, 2013, 06:50 AM</string>
-    <string name="durationPrefix">Countdown to departure to Mexico:</string>
+    <string name="arrivalDateTime">Thu October 24, 2013, 01:50 PM</string>
+    <string name="headerPrefix">Countdown to arrival in Mexico:</string>
+    <string name="welcomeToMexico">Bienvenidos a Mexico!</string>
+    <string name="moreBeerPlease">Mas cerveza por favor!</string>
     <string name="timePlaceholder">0</string>
     <string name="daysLabel">days</string>
     <string name="hoursLabel">hours</string>
